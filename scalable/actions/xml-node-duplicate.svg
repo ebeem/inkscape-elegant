@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) and export_objects.py -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg1"
+   width="16"
+   height="16"
+   viewBox="0 0 16 16"
+   sodipodi:docname="xml-node-duplicate-symbolic.svg"
+   inkscape:version="0.92.2 2405546, 2018-03-11">
+  <metadata
+     id="metadata21">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs19" />
+  <sodipodi:namedview
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     id="namedview"
+     showgrid="true"
+     inkscape:zoom="25.962698"
+     inkscape:cx="8.5514091"
+     inkscape:cy="11.344508"
+     inkscape:window-width="1541"
+     inkscape:window-height="845"
+     inkscape:window-x="1659"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid" />
+  </sodipodi:namedview>
+  <g
+     transform="matrix(0.666667,0,0,0.666666,-772,-371.57448)"
+     inkscape:label="00265"
+     id="xml-node-duplicate"
+     style="fill:#000000">
+    <g
+       id="g21890"
+       style="fill:#000000">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect21796"
+         d="m 1158,557.36218 h 24 v 24 h -24 z"
+         style="opacity:0;fill:#000000" />
+      <path
+         inkscape:connector-curvature="0"
+         id="rect21798"
+         d="m 1164,563.36218 h 1 v 18 h -1 z"
+         style="fill:#000000;opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="rect21800"
+         d="m 1165,563.36218 h 17 v 1 h -17 z"
+         style="fill:#000000;opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="rect21802"
+         d="m 1164,580.36218 h 18 v 1 h -18 z"
+         style="fill:#000000;opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="rect21804"
+         d="m 1181,563.36218 h 1 v 18 h -1 z"
+         style="fill:#000000;opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path21806"
+         d="m 1173,573.3622 v 8 h 8 v -8 z m 3,1 h 2 v 2 h 2 v 2 h -2 v 2 h -2 v -2 h -2 v -2 h 2 z"
+         style="fill:#000000;opacity:1" />
+      <g
+         transform="matrix(1.146412,0,0,0.920121,132.1332,549.0236)"
+         id="g21814"
+         style="fill:#000000">
+        <path
+           inkscape:connector-curvature="0"
+           id="path21816"
+           d="m 906.5,17.78125 -0.3438,0.375 -3,3 -0.375,0.34375 0.375,0.34375 3,3 0.3438,0.375 0.7187,-0.71875 -0.375,-0.34375 -2.6562,-2.65625 2.6562,-2.65625 0.375,-0.34375 z m 3,0 -0.7188,0.71875 0.375,0.34375 2.6563,2.65625 -2.6563,2.65625 -0.375,0.34375 0.7188,0.71875 0.3437,-0.375 3,-3 0.375,-0.34375 -0.375,-0.34375 -3,-3 z"
+           style="fill:#000000;opacity:1" />
+      </g>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect21818"
+         d="m 1158,557.36218 h 1 v 18 h -1 z"
+         style="fill:#000000;opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="rect21820"
+         d="m 1159,557.36218 h 17 v 1 h -17 z"
+         style="fill:#000000;opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="rect21822"
+         d="m 1158,574.36218 h 6 v 1 h -6 z"
+         style="fill:#000000;opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="rect21824"
+         d="m 1175,557.36218 h 1 v 6 h -1 z"
+         style="fill:#000000;opacity:1" />
+    </g>
+  </g>
+</svg>
