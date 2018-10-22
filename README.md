@@ -41,18 +41,18 @@ the sub directories of the destination directory provided in the python tool sho
 #generate white icons to the directory "scalable-white"
 python change_colors.py white scalable scalable-white
 ```
-in this case you will copy `scalable-white/actions` into your icon theme scalable directory
-usually, this should work since most icon theme inherit from `hicolor` (take backup of `hicolor` first)
+in this case you will copy `scalable-white/actions` into your icon theme scalable directory <br>
+usually, this should work since most icon theme inherit from `hicolor` (take backup of `hicolor` first) <br>
 `sudo cp -dr scalable-white/. /usr/share/icons/hicolor/scalable`
 
-if you use Adwaita icons 
+if you use Adwaita icons <br>
 `sudo cp -dr scalable-white/. /usr/share/icons/Adwaita/scalable`
 
 =================================
 
-yes, you can directly genereate to your theme and get it done in one step instead of two
-`sudo python change_colors.py white scalable /usr/share/icons/Adwaita/scalable`
-however, it's not recommended
+yes, you can directly genereate to your icon-theme and get it done in one step instead of two<br>
+`sudo python change_colors.py white scalable /usr/share/icons/Adwaita/scalable`<br>
+however, it's not recommended<br>
 `
 
 
@@ -63,7 +63,7 @@ todo
 todo
 
 ## Contribution
-icons contrubution is more than welcome!
+icons contrubution is more than welcome!<br>
 to keep icons semantic, a common guidelines must be followed [todo], icons style was chosen to be so simple and yet elegant, the icons should only be outlined by one color (black), the stroke must be as thin as possible and should NOT be filled by any color.<br>
 a great sample of good looking icons can be [found here](https://logosbynick.com/new-icons-for-inkscape/)
 
