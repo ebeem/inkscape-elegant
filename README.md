@@ -43,6 +43,8 @@ python change_colors.py black scalable scalable-generated --create-theme
 todo
 
 ### Windows
+Note: run the cmd as an administrator as the icons will be written in program files
+Note: expected inkscape installation path is C:\Program Files\Inkscape
 ```
 #generate white icons to the directory "scalable-generated" and create a new icon-theme and apply it
 python change_colors.py white scalable scalable-generated --create-theme
