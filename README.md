@@ -18,6 +18,10 @@ result:
 ![white icons](https://image.ibb.co/hJbPJA/inkscape-2.png)
 ![custom blue icons](https://image.ibb.co/c7QJdA/inkscape-3.png)
 
+### Dependencies
+```
+pip install lxml
+```
 
 ## Usage
 
@@ -39,7 +43,15 @@ python change_colors.py black scalable scalable-generated --create-theme
 todo
 
 ### Windows
-todo
+```
+#generate white icons to the directory "scalable-generated" and create a new icon-theme and apply it
+python change_colors.py white scalable scalable-generated --create-theme
+```
+
+```
+#generate black icons to the directory "scalable-generated" and create a new icon-theme and apply it
+python change_colors.py black scalable scalable-generated --create-theme
+```
 
 ## Contribution
 icons contrubution is more than welcome!<br>
