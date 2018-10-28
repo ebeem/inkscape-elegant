@@ -5,7 +5,7 @@ import sys
 
 from lxml import etree
 
-from constants import THEME_NAME, ICONS_DIRS
+from constants import THEME_NAME, ICONS_DIRS, ELEGANT_THEME_DIRECTORY
 
 
 def has_option(option_name):
@@ -23,6 +23,24 @@ def create_elegant_icons_theme(copy_from):
     try:
         current_theme_name = subprocess.check_output(['gsettings', 'get', 'org.gnome.desktop.interface', 'icon-theme']) \
                                  .decode("utf-8").replace('\n', '')[1:-1]
+
+        if current_theme_name == THEME_NAME:
+            print("you are currently using " + current_theme_name + " checking inherited theme ...")
+            with open(ELEGANT_THEME_DIRECTORY + 'index.theme') as f:
+                find_word = "Inherits="
+                length = len(find_word)
+                theme_found = False
+
+                for line in f:
+                    if len(line) > length and line[:length] == find_word:
+                        current_theme_name = line[length:]
+                        theme_found= True
+                        break
+
+                if not theme_found:
+                    raise Exception("could not find theme inherited by current inkscape-elegant theme, change you currrent "
+                                    "theme and try again")
+
         print("current theme is " + current_theme_name)
     except Exception as error:
         print('an error occurred while trying to get current icon-theme: ' + str(error))
