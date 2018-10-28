@@ -2,10 +2,11 @@ import glob
 import os
 import subprocess
 import sys
+import shutil
 
 from lxml import etree
-
-from constants import THEME_NAME, ICONS_DIRS, ELEGANT_THEME_DIRECTORY
+from sys import platform
+from constants import THEME_NAME, ICONS_DIRS, ELEGANT_THEME_DIRECTORY, WINDOWS_ICONS_PATH
 
 
 def has_option(option_name):
@@ -20,43 +21,57 @@ def has_option(option_name):
 
 
 def create_elegant_icons_theme(copy_from):
-    try:
-        current_theme_name = subprocess.check_output(['gsettings', 'get', 'org.gnome.desktop.interface', 'icon-theme']) \
-                                 .decode("utf-8").replace('\n', '')[1:-1]
+    if platform == "linux" or platform == "linux2":
+        print("linux machine")
+        try:
+            current_theme_name = subprocess.check_output(
+                ['gsettings', 'get', 'org.gnome.desktop.interface', 'icon-theme']) \
+                                     .decode("utf-8").replace('\n', '')[1:-1]
 
-        if current_theme_name == THEME_NAME:
-            print("you are currently using " + current_theme_name + " checking inherited theme ...")
-            with open(ELEGANT_THEME_DIRECTORY + 'index.theme') as f:
-                find_word = "Inherits="
-                length = len(find_word)
-                theme_found = False
+            if current_theme_name == THEME_NAME:
+                print("you are currently using " + current_theme_name + " checking inherited theme ...")
+                with open(ELEGANT_THEME_DIRECTORY + 'index.theme') as f:
+                    find_word = "Inherits="
+                    length = len(find_word)
+                    theme_found = False
 
-                for line in f:
-                    if len(line) > length and line[:length] == find_word:
-                        current_theme_name = line[length:]
-                        theme_found= True
-                        break
+                    for line in f:
+                        if len(line) > length and line[:length] == find_word:
+                            current_theme_name = line[length:]
+                            theme_found = True
+                            break
 
-                if not theme_found:
-                    raise Exception("could not find theme inherited by current inkscape-elegant theme, change you currrent "
-                                    "theme and try again")
+                    if not theme_found:
+                        raise Exception(
+                            "could not find theme inherited by current inkscape-elegant theme, change you currrent "
+                            "theme and try again")
 
-        print("current theme is " + current_theme_name)
-    except Exception as error:
-        print('an error occurred while trying to get current icon-theme: ' + str(error))
-        current_theme_name = input(
-            'looks like gsettings is not installed, you need to enter you current gtk-icon-theme > ')
+            print("current theme is " + current_theme_name)
+        except Exception as error:
+            print('an error occurred while trying to get current icon-theme: ' + str(error))
+            current_theme_name = input(
+                'looks like gsettings is not installed, you need to enter you current gtk-icon-theme > ')
 
-    try:
-        subprocess.check_output(['sudo', 'python', os.path.dirname(os.path.realpath(__file__))
-                                 + '/create_theme_icons.py', copy_from, current_theme_name])
-        subprocess.check_output(['gsettings', 'set', 'org.gnome.desktop.interface', 'icon-theme', THEME_NAME]) \
-            .decode("utf-8").replace('\n', '')
-        print('successfully updated current icon theme to ' + THEME_NAME)
-    except Exception as error:
-        print('an error occurred while trying to set current icon-theme: ' + str(error))
-        print('looks like gsettings is not installed, you need to set the icon-theme '
-              '[' + THEME_NAME + '] yourself, we recommend using gnome-tweaks tool')
+        try:
+            subprocess.check_output(['sudo', 'python', os.path.dirname(os.path.realpath(__file__))
+                                     + '/create_theme_icons.py', copy_from, current_theme_name])
+            subprocess.check_output(['gsettings', 'set', 'org.gnome.desktop.interface', 'icon-theme', THEME_NAME]) \
+                .decode("utf-8").replace('\n', '')
+            print('successfully updated current icon theme to ' + THEME_NAME)
+        except Exception as error:
+            print('an error occurred while trying to set current icon-theme: ' + str(error))
+            print('looks like gsettings is not installed, you need to set the icon-theme '
+                  '[' + THEME_NAME + '] yourself, we recommend using gnome-tweaks tool')
+    elif platform == "darwin":
+        # OS X
+        print("mac os machine")
+    elif platform == "win32":
+        print("windows machine")
+        if os.path.exists(WINDOWS_ICONS_PATH):
+            print('deleting old theme ' + WINDOWS_ICONS_PATH)
+            shutil.rmtree(WINDOWS_ICONS_PATH)
+        shutil.copytree(copy_from, WINDOWS_ICONS_PATH)
+        print('successfully applied theme')
 
 
 def analyze_color(color):
@@ -115,7 +130,7 @@ if len(sys.argv) < 4:
         - hex_code(e.g. #ff00aa)
     actions_source: name of the scalable directory which contains the actions directory
     actions_destination: name of the directory to move generated actions directory to       
-    
+
     Available options:
          -c, --create-theme             creates a new icon theme that inherits current theme and apply it
 """)
