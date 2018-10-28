@@ -1,5 +1,5 @@
 # inkscape-elegant
-redesigned look for inkscape providing modern light & dark theme
+Redesigned look for inkscape providing modern light & dark theme
 
 
 This project's goal is to produce a more "elegant" and stylish inkscape theme, this includes a proper gtk theme and icons set.
@@ -8,9 +8,9 @@ This project's goal is to produce a more "elegant" and stylish inkscape theme, t
 ## Sample
 sample usage of tool and result on the default icons (black)
 ```
-python change_colors.py black scalable scalable-black
-python change_colors.py white scalable scalable-white
-python change_colors.py "#6FC3DF" scalable scalable-blue
+python change_colors.py black scalable scalable-generated --create-theme
+python change_colors.py white scalable scalable-generated --create-theme
+python change_colors.py "#6FC3DF" scalable scalable-generated --create-theme
 ```
 
 result:
@@ -19,41 +19,20 @@ result:
 ![custom blue icons](https://image.ibb.co/c7QJdA/inkscape-3.png)
 
 
-## Setup
-this project will produce a new set of icons that should be added to the current gtk icons theme<br>
-the provided python tools copy all inkscape icons and modify their color to a desired one
-
-sample usage of tool
-```
-#generate black icons to the directory "scalable-black"
-python change_colors.py black scalable scalable-black
-
-#generate white icons to the directory "scalable-white"
-python change_colors.py white scalable scalable-white
-
-#generate cyan icons (code #6FC3DF) to the directory "scalable-blue"
-python change_colors.py "#6FC3DF" scalable scalable-blue
-```
+## Usage
 
 ### Linux
-the sub directories of the destination directory provided in the python tool should be copied to you current icons theme in scalable directory, for example: 
+if you use the optional argument```--create-theme``` the tool will automatically detect your current icon-theme and create a new theme called inkscape-elegant that inherits the current one and apply it
+
 ```
-#generate white icons to the directory "scalable-white"
-python change_colors.py white scalable scalable-white
+#generate white icons to the directory "scalable-generated" and create a new icon-theme and apply it
+python change_colors.py white scalable scalable-generated --create-theme
 ```
-in this case you will copy `scalable-white/actions` into your icon theme scalable directory <br>
-usually, this should work since most icon theme inherit from `hicolor` (take backup of `hicolor` first) <br>
-`sudo cp -dr scalable-white/. /usr/share/icons/hicolor/scalable`
 
-if you use Adwaita icons <br>
-`sudo cp -dr scalable-white/. /usr/share/icons/Adwaita/scalable`
-
-=================================
-
-yes, you can directly genereate to your icon-theme and get it done in one step instead of two<br>
-`sudo python change_colors.py white scalable /usr/share/icons/Adwaita/scalable`<br>
-however, it's not recommended<br>
-`
+```
+#generate black icons to the directory "scalable-generated" and create a new icon-theme and apply it
+python change_colors.py black scalable scalable-generated --create-theme
+```
 
 
 ### Mac OS X
